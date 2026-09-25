@@ -6,7 +6,7 @@ GEM
     chunky_png (1.4.0)
     color (1.8)
     equalizer (0.0.11)
-    facets (3.1.0)
+    facets (3.2.2)
     glimmer (2.7.9)
       array_include_methods (>= 1.4.0, < 1.6.0)
       facets (>= 3.1.0, < 4.0.0)
@@ -20,44 +20,113 @@ GEM
       perfect-shape (~> 1.0.8)
       rouge (>= 3.26.0, < 4.0.0)
       super_module (~> 1.4.1)
+    libui (0.1.2)
+    libui (0.1.2-arm64-darwin)
     libui (0.1.2-x86_64-darwin)
+    logger (1.7.0)
     matrix (0.4.3)
     method_source (1.1.0)
     mustermann (3.1.1)
-    nio4r (2.7.3)
+    nio4r (2.7.5)
     os (1.1.4)
     perfect-shape (1.0.8)
       equalizer (>= 0.0.11, < 1.1.0)
       matrix (>= 0.4.2, < 1.1.0)
-    puma (6.4.2)
+    puma (7.2.1)
       nio4r (~> 2.0)
-    rack (3.1.7)
-    rack-protection (4.0.0)
+    rack (3.2.7)
+    rack-protection (4.2.1)
       base64 (>= 0.1.0)
+      logger (>= 1.6.0)
       rack (>= 3.0.0, < 4)
-    rack-session (2.0.0)
+    rack-session (2.1.2)
+      base64 (>= 0.1.0)
       rack (>= 3.0.0)
+    rackup (2.3.1)
+      rack (>= 3)
     rouge (3.30.0)
-    sinatra (4.0.0)
+    sinatra (4.2.1)
+      logger (>= 1.6.0)
       mustermann (~> 3.0)
       rack (>= 3.0.0, < 4)
-      rack-protection (= 4.0.0)
+      rack-protection (= 4.2.1)
       rack-session (>= 2.0.0, < 3)
       tilt (~> 2.0)
-    sqlite3 (1.7.3-x86_64-darwin)
+    sqlite3 (2.9.6-aarch64-linux-gnu)
+    sqlite3 (2.9.6-aarch64-linux-musl)
+    sqlite3 (2.9.6-arm-linux-gnu)
+    sqlite3 (2.9.6-arm-linux-musl)
+    sqlite3 (2.9.6-arm64-darwin)
+    sqlite3 (2.9.6-x86-linux-gnu)
+    sqlite3 (2.9.6-x86-linux-musl)
+    sqlite3 (2.9.6-x86_64-darwin)
+    sqlite3 (2.9.6-x86_64-linux-gnu)
+    sqlite3 (2.9.6-x86_64-linux-musl)
     super_module (1.4.2)
       method_source (>= 0.8.2, < 2.0.0)
     tilt (2.9.0)
 
 PLATFORMS
+  aarch64-linux-gnu
+  aarch64-linux-musl
+  arm-linux-gnu
+  arm-linux-musl
+  arm64-darwin
+  x86-linux-gnu
+  x86-linux-musl
   x86_64-darwin
-  x86_64-darwin-19
+  x86_64-linux-gnu
+  x86_64-linux-musl
 
 DEPENDENCIES
   glimmer-dsl-libui (~> 0.7.0)
-  puma
+  puma (~> 7.0)
+  rackup (~> 2.2)
   sinatra (~> 4.0)
-  sqlite3 (~> 1.7)
+  sqlite3 (~> 2.8)
+
+CHECKSUMS
+  array_include_methods (1.5.1) sha256=c29e905b8511814e8f488ce1a219bb5638a8f5fa88af215a95f95da610bff0ce
+  base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
+  bundler (4.0.13) sha256=19f08be7f27022cf0b89f27da0b044ae075e8270a9ef44ad248a932614e1ca3b
+  chunky_png (1.4.0) sha256=89d5b31b55c0cf4da3cf89a2b4ebc3178d8abe8cbaf116a1dba95668502fdcfe
+  color (1.8) sha256=0a8512ecf6a8fe14928707f7d2766680c955b3a2224de198c1e25c837cd36f82
+  equalizer (0.0.11) sha256=44e5bc46f49883e83d159ee9b1f7320b4ae8283bb6329e5d9716f5e7dde855ce
+  facets (3.2.2) sha256=be0659e31b2acb300ecbcaaad92cd49a5086c1c4fadf3bab9ec192b67e2625a9
+  glimmer (2.7.9) sha256=11c7256a22dc65b0b69a508364a8bd20b24336dc905ae63c6389dc20bf510d78
+  glimmer-dsl-libui (0.7.8) sha256=3682c6f9f8b128b600c7337c96c564edc58b65dd2ff091d645f18d59a1366fff
+  libui (0.1.2) sha256=8d1b6ce7ea5aa1670f27d1c31d0b6be8c85e0e0cd4dc1ac5182d9f7cbd7a9b26
+  libui (0.1.2-arm64-darwin) sha256=d5611e3a5c82d77839b218e8baa59975f11d9ac77405392f42321607a494cae0
+  libui (0.1.2-x86_64-darwin) sha256=fc0f9309d16f03e822c481374b8041c9ab74cc35c5bfdfd7985642f996454f2f
+  logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
+  matrix (0.4.3) sha256=a0d5ab7ddcc1973ff690ab361b67f359acbb16958d1dc072b8b956a286564c5b
+  method_source (1.1.0) sha256=181301c9c45b731b4769bc81e8860e72f9161ad7d66dd99103c9ab84f560f5c5
+  mustermann (3.1.1) sha256=4c6170c7234d5499c345562ba7c7dfe73e1754286dcc1abb053064d66a127198
+  nio4r (2.7.5) sha256=6c90168e48fb5f8e768419c93abb94ba2b892a1d0602cb06eef16d8b7df1dca1
+  os (1.1.4) sha256=57816d6a334e7bd6aed048f4b0308226c5fb027433b67d90a9ab435f35108d3f
+  perfect-shape (1.0.8) sha256=f03ada909cbfd5ceb2f858902be239d8cf17c81e37ec4b9fac9633fed7b43c2c
+  puma (7.2.1) sha256=d7bf0e9cabd532e0d401e142cd94e3ac531e993610e2d80e6fbf9c26961414b0
+  rack (3.2.7) sha256=93e13e1c24f93556671d85d2d79fa228c3485815c50d7e2f265b5330c6528fb7
+  rack-protection (4.2.1) sha256=cf6e2842df8c55f5e4d1a4be015e603e19e9bc3a7178bae58949ccbb58558bac
+  rack-session (2.1.2) sha256=595434f8c0c3473ae7d7ac56ecda6cc6dfd9d37c0b2b5255330aa1576967ffe8
+  rackup (2.3.1) sha256=6c79c26753778e90983761d677a48937ee3192b3ffef6bc963c0950f94688868
+  rouge (3.30.0) sha256=a3d353222aa72e49e2c86726c0bcfd719f82592f57d494474655f48e669eceb6
+  sinatra (4.2.1) sha256=b7aeb9b11d046b552972ade834f1f9be98b185fa8444480688e3627625377080
+  sqlite3 (2.9.6-aarch64-linux-gnu) sha256=d8b1f7d23efd7abac285775a9566562fc7debfef79d594e3a20354406fb7907c
+  sqlite3 (2.9.6-aarch64-linux-musl) sha256=3579e1c98cdc7ff5c3722847bb63ed4e1efb7ff675cb5e1e48ef2d4da5fb3bc9
+  sqlite3 (2.9.6-arm-linux-gnu) sha256=33541500e3615da02afe54a9cc38b17a6985d3cf9d8b76d6d0a83002f114e7ec
+  sqlite3 (2.9.6-arm-linux-musl) sha256=c5490af48bb228fefa54314e9541375c3907e70f8109f3881b5ff97e1c93ae33
+  sqlite3 (2.9.6-arm64-darwin) sha256=849b5d7f795e60fe25076d62c72dd722beb45b3850b516ad978d60ee848ec15b
+  sqlite3 (2.9.6-x86-linux-gnu) sha256=fbaa9f46f9708f57dd8a459b37fc269f9613e0cacf1547df01aa439cc45c20c0
+  sqlite3 (2.9.6-x86-linux-musl) sha256=6715026fbb5530e810b28ef43b9c4f84cd3c991f67b9d808a31fcc32b847abbd
+  sqlite3 (2.9.6-x86_64-darwin) sha256=b5842fea77781c14da03fa7bc0feb82db03a69e135affcb6f5399cbd2797a5f3
+  sqlite3 (2.9.6-x86_64-linux-gnu) sha256=613188ce02f614126ddbc38c5e217ccffd6306d0dcd9adca9764547aa890a634
+  sqlite3 (2.9.6-x86_64-linux-musl) sha256=d493b11818a3573387a1d56e1ee8fa00da23a683a7a1cc063e7a0feeed843abf
+  super_module (1.4.2) sha256=50172eefea196d3f7513e6c0c5856048a462087a8232d144a5f8680651b7dfe0
+  tilt (2.9.0) sha256=da5735d0280bba96e9a91041bb14aee435ccad5c17b0fa519249ae543d9aa3a5
+
+RUBY VERSION
+  ruby 3.4.9
 
 BUNDLED WITH
-   2.5.22
+  4.0.13

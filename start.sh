@@ -15,7 +15,7 @@ fi
 PORT="${PORT:-4567}"
 URL="http://127.0.0.1:$PORT"
 
-AUTO_EXIT=1 PORT="$PORT" ruby note_editor_web.rb &
+AUTO_EXIT=1 PORT="$PORT" bundle exec ruby note_editor_web.rb &
 SERVER_PID=$!
 trap 'kill $SERVER_PID 2>/dev/null' EXIT
 

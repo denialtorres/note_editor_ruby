@@ -81,5 +81,5 @@ settings.
 
 ## Requirements
 
-Ruby 3.0 (see `.ruby-version`, managed by rvm), `bundle install`, Google Chrome
-for the app-mode window.
+Ruby 3.4 (see `.ruby-version`, managed by rvm), `bundle install`, Google Chrome
+for the app-mode window. The legacy native edition needs `bundle install --with native`.
