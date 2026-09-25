@@ -1,5 +1,8 @@
 # Note Editor
 
+<img width="1788" height="1038" alt="Screenshot 2026-09-25 at 2 40 16 p m" src="https://github.com/user-attachments/assets/ad0e7df6-36d3-4816-9ecf-5a9978bed36f" />
+
+
 A minimal, distraction-free markdown note editor written in Ruby. Two editions:
 
 | Edition | File | Look |
