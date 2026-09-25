@@ -78,7 +78,10 @@ VERSION=1.1.0 build/build_app.sh   # sets the bundle version
 ```
 
 This produces `dist/Note Editor.app`, a self-contained bundle (about 113 MB
-universal) that needs no Ruby on the target Mac. It contains:
+universal) that needs no Ruby on the target Mac, and `dist/Note-Editor-<version>.dmg`
+(about 40 MB compressed) holding the app, an Applications shortcut, and a
+"READ ME FIRST" with the first-launch steps. Pass `DMG=0` to skip the image.
+The app contains:
 
 - [Traveling Ruby](https://github.com/YOU54F/traveling-ruby) 3.4 runtimes for
   each architecture in `Contents/Resources/ruby-<arch>`

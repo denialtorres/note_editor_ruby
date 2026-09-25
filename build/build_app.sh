@@ -109,6 +109,9 @@ rm -rf "$VENDOR/ruby/$RUBY_ABI/cache" "$VENDOR/ruby/$RUBY_ABI/doc"
 # ---------------------------------------------------------------------------
 log "Assembling $APP_NAME.app"
 APP="$DIST/$APP_NAME.app"
+if pgrep -f "$APP/Contents/MacOS/NoteEditor" >/dev/null; then
+  echo "  $APP_NAME is running from $APP. Quit it first."; exit 1
+fi
 rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources/app"
 
@@ -126,9 +129,21 @@ cp -R "$ROOT/public" "$APP/Contents/Resources/app/public"
 
 # ---------------------------------------------------------------------------
 log "Signing (ad-hoc)"
-codesign --force --deep --sign - "$APP" 2>&1 | grep -v 'replacing existing signature' || true
-codesign --verify --deep --strict "$APP" && echo "  signature OK"
+codesign --force --deep --sign - "$APP" 2>&1 | grep -v "replacing existing signature" || true
+if codesign --verify --deep --strict "$APP"; then
+  echo "  signature OK"
+else
+  echo "  signing failed"
+  exit 1
+fi
+
+log "Creating DMG"
+if [ "${DMG:-1}" = "1" ]; then
+  "$BUILD/make_dmg.sh" "$VERSION"
+else
+  echo "  skipped (DMG=0)"
+fi
 
 log "Done"
-du -sh "$APP" | sed 's/^/  /'
+du -sh "$APP" | sed "s/^/  /"
 echo "  $APP"
