@@ -65,6 +65,7 @@ GEM
     super_module (1.4.2)
       method_source (>= 0.8.2, < 2.0.0)
     tilt (2.9.0)
+    webrick (1.9.2)
 
 PLATFORMS
   aarch64-linux-gnu
@@ -84,6 +85,7 @@ DEPENDENCIES
   rackup (~> 2.2)
   sinatra (~> 4.0)
   sqlite3 (~> 2.8)
+  webrick (~> 1.9)
 
 CHECKSUMS
   array_include_methods (1.5.1) sha256=c29e905b8511814e8f488ce1a219bb5638a8f5fa88af215a95f95da610bff0ce
@@ -124,6 +126,7 @@ CHECKSUMS
   sqlite3 (2.9.6-x86_64-linux-musl) sha256=d493b11818a3573387a1d56e1ee8fa00da23a683a7a1cc063e7a0feeed843abf
   super_module (1.4.2) sha256=50172eefea196d3f7513e6c0c5856048a462087a8232d144a5f8680651b7dfe0
   tilt (2.9.0) sha256=da5735d0280bba96e9a91041bb14aee435ccad5c17b0fa519249ae543d9aa3a5
+  webrick (1.9.2) sha256=beb4a15fc474defed24a3bda4ffd88a490d517c9e4e6118c3edce59e45864131
 
 RUBY VERSION
   ruby 3.4.9

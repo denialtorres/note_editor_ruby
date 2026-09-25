@@ -69,6 +69,38 @@ current selection, and undo works as usual.
 - Styling lives in the CSS variables at the top of `public/style.css`
   (colours, font, column width, line height, sidebar width).
 
+## Building the macOS app
+
+```bash
+build/build_app.sh                 # universal: Apple Silicon + Intel
+ARCHES=arm64 build/build_app.sh    # single architecture, half the size
+VERSION=1.1.0 build/build_app.sh   # sets the bundle version
+```
+
+This produces `dist/Note Editor.app`, a self-contained bundle (about 113 MB
+universal) that needs no Ruby on the target Mac. It contains:
+
+- [Traveling Ruby](https://github.com/YOU54F/traveling-ruby) 3.4 runtimes for
+  each architecture in `Contents/Resources/ruby-<arch>`
+- the gems in `Contents/Resources/vendor`, installed with the bundled Ruby.
+  sqlite3 comes from the precompiled RubyGems builds for both architectures;
+  the server is WEBrick because Puma has no prebuilt macOS binary
+- `note_editor_web.rb` and `public/` in `Contents/Resources/app`
+- `Contents/MacOS/NoteEditor`, the launcher (`build/launcher.sh`). It picks a
+  free port, stores the database and `app.log` in
+  `~/Library/Application Support/Note Editor`, opens Chrome, Brave, Edge,
+  Chromium, or Vivaldi in app mode (default browser as a last resort), and
+  quits when the window closes. Opening the app again while it runs just opens
+  another window.
+- an icon rendered from `build/icon.svg` with QuickLook, `sips`, and `iconutil`
+
+The app is ad-hoc signed. Without an Apple Developer ID, macOS blocks the
+first launch: the user opens it once, then allows it under System Settings,
+Privacy & Security, "Open Anyway", or runs
+`xattr -cr "/Applications/Note Editor.app"`.
+
+Downloads are cached in `build/cache`; `build/tmp` and `dist` are scratch.
+
 ## Native edition
 
 ```bash

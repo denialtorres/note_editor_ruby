@@ -5,7 +5,12 @@ task :web do
   system './start.sh'
 end
 
-desc 'Run the native LibUI editor'
+desc 'Build dist/Note Editor.app (ARCHES="arm64 x86_64", VERSION=1.0.0)'
+task :app do
+  system 'build/build_app.sh' or abort 'build failed'
+end
+
+desc 'Run the legacy native LibUI editor (bundle install --with native)'
 task :gui do
   system 'ruby note_editor.rb'
 end

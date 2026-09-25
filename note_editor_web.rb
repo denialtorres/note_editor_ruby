@@ -18,6 +18,7 @@ set :bind, '127.0.0.1'
 set :port, (ENV['PORT'] || 4567).to_i
 set :public_folder, File.join(__dir__, 'public')
 set :logging, ENV['DEBUG'] == '1'
+set :server_settings, { AccessLog: [] } # keep WEBrick (packaged app) from logging every heartbeat
 
 # ---- Storage -------------------------------------------------------------
 DB_PATH = ENV['NOTE_DB'] || File.join(Dir.home, 'Library', 'Application Support', 'Note Editor', 'notes.sqlite3')

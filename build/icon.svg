@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#24263a"/>
+      <stop offset="1" stop-color="#1a1b26"/>
+    </linearGradient>
+  </defs>
+  <rect x="64" y="64" width="896" height="896" rx="200" fill="url(#bg)"/>
+  <rect x="80" y="80" width="864" height="864" rx="186" fill="none" stroke="#7aa2f7" stroke-opacity="0.55" stroke-width="10"/>
+  <!-- heading line: dimmed ## then bold text bar -->
+  <text x="232" y="392" font-family="Menlo, Consolas, monospace" font-size="150" font-weight="700" fill="#565f89">##</text>
+  <rect x="440" y="288" width="352" height="112" rx="28" fill="#e4e8f4"/>
+  <!-- body lines -->
+  <rect x="232" y="492" width="560" height="52" rx="26" fill="#c3c8d6" fill-opacity="0.9"/>
+  <rect x="232" y="596" width="460" height="52" rx="26" fill="#c3c8d6" fill-opacity="0.9"/>
+  <rect x="232" y="700" width="300" height="52" rx="26" fill="#7aa2f7"/>
+  <!-- caret -->
+  <rect x="560" y="690" width="14" height="72" rx="4" fill="#e4e8f4"/>
+</svg>
