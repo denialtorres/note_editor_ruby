@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Note Editor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="toolbar">
+    <div class="group">
+      <button data-action="heading" data-level="1" title="Heading 1 (⌥⌘1)">H1</button>
+      <button data-action="heading" data-level="2" title="Heading 2 (⌥⌘2)">H2</button>
+      <button data-action="heading" data-level="3" title="Heading 3 (⌥⌘3)">H3</button>
+    </div>
+    <span class="sep"></span>
+    <div class="group">
+      <button data-action="bold" title="Bold (⌘B)"><b>B</b></button>
+      <button data-action="italic" title="Italic (⌘I)"><i>I</i></button>
+      <button data-action="strike" title="Strikethrough (⌘⇧X)"><s>S</s></button>
+      <button data-action="code" title="Inline code (⌘E)">&lt;/&gt;</button>
+      <button data-action="link" title="Link (⌘K)">
+        <svg viewBox="0 0 16 16" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M6.5 9.5l3-3M9 4.5l1.2-1.2a2.3 2.3 0 013.3 3.3L12.3 7.8M7 11.5l-1.2 1.2a2.3 2.3 0 01-3.3-3.3L3.7 8.2"/></svg>
+      </button>
+    </div>
+    <span class="sep"></span>
+    <div class="group">
+      <button data-action="quote" title="Quote">
+        <svg viewBox="0 0 16 16" width="14" height="14"><path fill="currentColor" d="M3 4h4v4H5c0 1.2.8 2 2 2v1.5C4.8 11.5 3 9.9 3 8V4zm6 0h4v4h-2c0 1.2.8 2 2 2v1.5c-2.2 0-4-1.6-4-3.5V4z"/></svg>
+      </button>
+      <button data-action="ul" title="Bullet list">
+        <svg viewBox="0 0 16 16" width="14" height="14"><path fill="currentColor" d="M2 3.5a1 1 0 112 0 1 1 0 01-2 0zm0 4.5a1 1 0 112 0 1 1 0 01-2 0zm0 4.5a1 1 0 112 0 1 1 0 01-2 0zM6 3h8v1.2H6zm0 4.5h8v1.2H6zM6 12h8v1.2H6z"/></svg>
+      </button>
+      <button data-action="ol" title="Numbered list">
+        <svg viewBox="0 0 16 16" width="14" height="14"><path fill="currentColor" d="M2.2 2.2h1.1v3H2.4v-.8h.3V3H2.2zM1.9 7h1.9v.8L2.8 9h1v.8H1.9V9l1-1.2h-1zm0 4.4h1.9v3H1.9v-.7h1.2v-.5h-1v-.6h1v-.5H1.9zM6 3h8v1.2H6zm0 4.5h8v1.2H6zM6 12h8v1.2H6z"/></svg>
+      </button>
+      <button data-action="task" title="Checklist">
+        <svg viewBox="0 0 16 16" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="1.3" d="M2.5 2.5h11v11h-11z"/><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M5 8.2l2 2 4-4.4"/></svg>
+      </button>
+      <button data-action="hr" title="Horizontal rule">—</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="editor">
+      <pre class="backdrop" aria-hidden="true"><code id="highlight"></code></pre>
+      <textarea id="input" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off" autofocus></textarea>
+    </div>
+  </main>
+
+  <footer class="statusbar">
+    <div class="left">
+      <button class="icon" id="save-btn" title="Save (⌘S)">
+        <svg viewBox="0 0 16 16" width="13" height="13"><path fill="currentColor" d="M2 2h9l3 3v9H2V2zm2 1v3h6V3H4zm0 6v4h8V9H4z"/></svg>
+      </button>
+      <button class="icon" id="open-btn" title="Open (⌘O)">
+        <svg viewBox="0 0 16 16" width="13" height="13"><path fill="currentColor" d="M1.5 3h4l1.5 1.5h7.5v9h-13V3zm1 1v7.5h11V5.5H6.6L5.1 4H2.5z"/></svg>
+      </button>
+      <button class="icon" id="new-btn" title="New note">
+        <svg viewBox="0 0 16 16" width="13" height="13"><path fill="currentColor" d="M7.25 2h1.5v5.25H14v1.5H8.75V14h-1.5V8.75H2v-1.5h5.25z"/></svg>
+      </button>
+      <span id="status">Unsaved</span>
+      <span id="toast"></span>
+    </div>
+    <div class="right"><span id="words">0 Words</span></div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
